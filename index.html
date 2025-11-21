@@ -59,7 +59,80 @@
       0% { opacity: 0; transform: translateY(40px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-  </style>
+      .product-card {
+      background: #002244;
+      width: 320px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      animation: fadeIn 1.4s ease;
+    }
+
+    .product-img {
+      width: 100%;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .buy-btn {
+      padding: 12px 25px;
+      background: #00aaff;
+      border: none;
+      border-radius: 15px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .buy-btn:hover {
+      background: #0088cc;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .modal-content {
+      background: #001a33;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      width: 300px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .modal-buttons button {
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .yes-btn { background: #00cc66; }
+    .no-btn { background: #cc0000; color: white; }
+
+</style>
+<script>
+  function openModal() {
+    document.getElementById('purchaseModal').style.display = 'flex';
+  }
+  function closeModal() {
+    document.getElementById('purchaseModal').style.display = 'none';
+  }
+</script>
 </head>
 <body>
   <header>SDJ Productions Product Releases</header>
@@ -71,6 +144,21 @@
       updates, or products here. The design is fully animated and smoothly
       transitions with the blue and black theme.
     </p>
+  </div>
+
+  <div class="product-card">
+    <img src="nametags.png" alt="Nametags" class="product-img" />
+    <button class="buy-btn" onclick="openModal()">R$ 200</button>
+  </div>
+
+  <div id="purchaseModal" class="modal">
+    <div class="modal-content">
+      <h3>Complete robux purchase?</h3>
+      <div class="modal-buttons">
+        <button class="yes-btn" onclick="closeModal()">Yes</button>
+        <button class="no-btn" onclick="closeModal()">No</button>
+      </div>
+    </div>
   </div>
 
   <footer>Powered By Dev Studios</footer>
