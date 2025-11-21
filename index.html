@@ -132,18 +132,23 @@
   function closeModal() {
     document.getElementById('purchaseModal').style.display = 'none';
   }
+  function openPaypal() {
+    document.getElementById('paypalModal').style.display = 'flex';
+  }
+  function closePaypal() {
+    document.getElementById('paypalModal').style.display = 'none';
+  }
 </script>
 </head>
 <body>
   <header>SDJ Productions Product Releases</header>
 
-  <div class="content">
-    <h2>Latest Releases</h2>
-    <p>
-      Welcome to SDJ Productions product release page. You can list new projects,
-      updates, or products here. The design is fully animated and smoothly
-      transitions with the blue and black theme.
-    </p>
+  <div class="content" style="display:flex; justify-content:flex-start; align-items:flex-start;">
+    <div class="product-card" style="margin:0;">
+      <img src="nametags.png" alt="Nametags" class="product-img" />
+      <button class="buy-btn" onclick="openModal()">R$ 200</button>
+      <button class="buy-btn" onclick="openPaypal()" style="margin-top:10px; background:#0077ff;">PayPal $3</button>
+    </div>
   </div>
 
   <div class="product-card">
@@ -163,5 +168,14 @@
 
   <footer>Powered By Dev Studios</footer>
   <div class="footer2">Copyright 2025 SDJ Productions</div>
+
+
+<div id="paypalModal" class="modal">
+  <div class="modal-content">
+    <h3>Not using paypal at this time.<br>Please come back another time!</h3>
+    <button class="no-btn" onclick="closePaypal()">Close</button>
+  </div>
+</div>
+
 </body>
 </html>
