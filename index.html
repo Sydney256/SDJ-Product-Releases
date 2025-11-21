@@ -138,9 +138,22 @@
   function closePaypal() {
     document.getElementById('paypalModal').style.display = 'none';
   }
+  // Close login popup
+  function closeLogin() {
+    document.getElementById('loginModal').style.display = 'none';
+  }
 </script>
 </head>
 <body>
+
+<!-- First-Time Login Modal -->
+<div id="loginModal" class="modal" style="display:flex;">
+  <div class="modal-content" style="width:330px;">
+    <h3>Select a login method</h3>
+    <button class="buy-btn" style="width:100%; margin-top:15px;" onclick="closeLogin()">Login with Discord" onclick=\"window.location.href='https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&response_type=code&redirect_uri=YOUR_REDIRECT_URL&scope=identify'\"</button>
+    <button class="buy-btn" style="width:100%; margin-top:10px; background:#5865F2;" onclick="closeLogin()">Login with Roblox" onclick=\"window.location.href='https://auth.roblox.com/v2/authorize?client_id=YOUR_CLIENT_ID&response_type=code&redirect_uri=YOUR_REDIRECT_URL&scope=openid%20profile'\"</button>
+  </div>
+</div>
   <header>SDJ Productions Product Releases</header>
 
   <div class="content" style="display:flex; justify-content:flex-start; align-items:flex-start;">
